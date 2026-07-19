@@ -61,7 +61,7 @@ const Shop = () => {
                     </aside>
 
                     <div id="products">
-                        <div className="mb-6 flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+                        <div className="mb-6 flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-white  p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
                             <div>
                                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5E13]">Showing 6 products</p>
                                 <h2 className="text-xl font-semibold text-slate-900">Curated for your next favorite</h2>

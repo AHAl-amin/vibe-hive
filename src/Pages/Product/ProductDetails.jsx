@@ -1,10 +1,11 @@
 import { ArrowLeft, Heart, ShoppingBag, Star, Truck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import { products } from '../../data/mockData';
 
 const ProductDetails = () => {
     const product = products[0];
+    const navigate = useNavigate();
 
     return (
         <div className="bg-[#f7f7f5] pb-20 text-slate-800">
@@ -62,10 +63,10 @@ const ProductDetails = () => {
                         </div>
 
                         <div className="mt-6 flex flex-wrap gap-3">
-                            <button className="inline-flex items-center gap-2 rounded-full bg-[#0F5B64] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0a4448]">
+                            <button onClick={() => navigate('/cart')} className="inline-flex items-center gap-2 rounded-full bg-[#0F5B64] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0a4448] cursor-pointer">
                                 <ShoppingBag size={16} /> Add to cart
                             </button>
-                            <button className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700">Buy now</button>
+                            <button onClick={() => navigate('/checkout')} className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 cursor-pointer">Buy now</button>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     return (
-        <div className="group rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        <div className="group rounded-[1.5rem] hover:border-[#FF5E13]/50 transition delay-100 hover:border-b-4 hover:bg-opacity-50 hover:bg-black/10 border border-slate-200 bg-white p-4 shadow-sm  hover:-translate-y-1 hover:shadow-lg">
             <div className="flex items-start justify-between">
                 <span className="rounded-full bg-[#FF5E13]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5E13]">{product.badge}</span>
                 <button className="rounded-full border border-slate-200 p-2 text-slate-500 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">

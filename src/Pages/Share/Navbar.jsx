@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { Heart, Menu, Search, ShoppingBag, User, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../public/img/logo.png';
+import { useState } from 'react';
 
 const links = [
   { name: 'Home', to: '/' },
@@ -14,6 +14,7 @@ const links = [
 const Navbar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur">
@@ -32,8 +33,10 @@ const Navbar = () => {
           {links.map((link) => {
             const isActive = location.pathname === link.to;
             return (
-              <Link key={link.name} to={link.to} className={`text-sm font-semibold transition ${isActive ? 'text-[#0F5B64]' : 'text-slate-600 hover:text-[#0F5B64]'}`}>
-                {link.name}
+              <Link key={link.name} to={link.to} className={` text-sm font-semibold transition ${isActive ? 'text-[#0F5B64]' : 'text-slate-600 hover:text-[#0F5B64]'}`}>
+                <div className={`rounded-full px-3 py-1 hover:bg-[#0F5B64]/10 hover:text-[#FF5E13]/50 transition-transform ${isActive ? 'bg-[#0F5B64]/10  ' : ''}`}>
+                  {link.name}
+                </div>
               </Link>
             );
           })}
@@ -43,10 +46,10 @@ const Navbar = () => {
           <button className="rounded-full border border-slate-200 p-2.5 text-slate-600 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
             <Search size={18} />
           </button>
-          <button className="rounded-full border border-slate-200 p-2.5 text-slate-600 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
+          <button onClick={() => navigate('/wishlist')} className="rounded-full border border-slate-200 p-2.5 text-slate-600 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
             <Heart size={18} />
           </button>
-          <button className="rounded-full border border-slate-200 p-2.5 text-slate-600 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
+          <button onClick={() => navigate('/cart')} className="rounded-full border border-slate-200 p-2.5 text-slate-600 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
             <ShoppingBag size={18} />
           </button>
           <Link to="/login" className="rounded-full bg-[#0F5B64] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0a4448]">

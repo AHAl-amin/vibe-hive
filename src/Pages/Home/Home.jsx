@@ -1,5 +1,6 @@
 import { ArrowRight, Heart, ShoppingBag, Star, Truck } from 'lucide-react';
 import Banner from './Banner';
+import CustomerReview from '../../components/CustomerReview';
 
 const categories = [
   { name: 'Lifestyle', caption: 'Daily favorites', accent: 'from-[#0F5B64] to-[#0b3b3f]' },
@@ -134,18 +135,8 @@ const Home = () => {
             <h2 className="mt-2 text-3xl font-semibold text-slate-900">Trusted by thoughtful shoppers</h2>
           </div>
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
-          {testimonials.map((item) => (
-            <div key={item.author} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="flex items-center gap-1 text-amber-500">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={index} size={16} fill="currentColor" />
-                ))}
-              </div>
-              <p className="mt-4 text-lg leading-8 text-slate-700">“{item.quote}”</p>
-              <p className="mt-5 font-semibold text-slate-900">{item.author}</p>
-            </div>
-          ))}
+        <div className="">
+          <CustomerReview />
         </div>
       </section>
 
