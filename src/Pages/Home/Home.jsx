@@ -1,6 +1,7 @@
 import { ArrowRight, Heart, ShoppingBag, Star, Truck } from 'lucide-react';
 import Banner from './Banner';
 import CustomerReview from '../../components/CustomerReview';
+import { Fade, Zoom } from 'react-awesome-reveal';
 
 const categories = [
   { name: 'Lifestyle', caption: 'Daily favorites', accent: 'from-[#0F5B64] to-[#0b3b3f]' },
@@ -36,19 +37,22 @@ const Home = () => {
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {categories.map((item) => (
-            <div key={item.name} className={`rounded-[1.5rem] bg-gradient-to-br ${item.accent} p-[1px]`}>
-              <div className="flex h-full flex-col justify-between rounded-[calc(1.5rem-1px)] bg-white/95 p-6 shadow-sm">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Collection</p>
-                  <h3 className="mt-3 text-xl font-semibold text-slate-900">{item.name}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{item.caption}</p>
+            <Zoom >
+
+              <div key={item.name} className={`rounded-[1.5rem] bg-gradient-to-br ${item.accent} p-[1px]`}>
+                <div className="flex h-full flex-col justify-between rounded-[calc(1.5rem-1px)] bg-white/95 p-6 shadow-sm">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Collection</p>
+                    <h3 className="mt-3 text-xl font-semibold text-slate-900">{item.name}</h3>
+                    <p className="mt-2 text-sm text-slate-600">{item.caption}</p>
+                  </div>
+                  <button className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#0F5B64]">
+                    Discover now
+                    <ArrowRight size={16} />
+                  </button>
                 </div>
-                <button className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#0F5B64]">
-                  Discover now
-                  <ArrowRight size={16} />
-                </button>
               </div>
-            </div>
+            </Zoom>
           ))}
         </div>
       </section>
@@ -63,7 +67,7 @@ const Home = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {featuredProducts.map((product) => (
-            <div key={product.name} className="group rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div key={product.name} className="group rounded-[1.5rem] border border-slate-200 hover:border-[#FF5E13]/50  delay-100 hover:border-b-4 hover:bg-opacity-50 hover:bg-black/10  bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
               <div className="flex items-start justify-between">
                 <span className="rounded-full bg-[#FF5E13]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5E13]">{product.badge}</span>
                 <button className="rounded-full border border-slate-200 p-2 text-slate-500 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
