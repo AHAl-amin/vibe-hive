@@ -129,12 +129,7 @@ const Home = () => {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5E13]">Community love</p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-900">Trusted by thoughtful shoppers</h2>
-          </div>
-        </div>
+
         <div className="">
           <CustomerReview />
         </div>

@@ -6,59 +6,59 @@
 import { useState, useEffect, useRef } from "react";
 
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 
 const testimonials = [
     {
         id: 1,
-        name: "Ariahkay",
+        name: "Mahmudul Hasan",
         username: "@Ariahkay",
-        body: " I love the patience that I was provided with during my time working with those individuals.",
-        img: "/img/review/client1.png",
-        image: "/img/review/client1.png",
+        body: " This was my first order, and I'm really impressed. The product quality is excellent, and it arrived on time. I'll definitely shop here again!",
+        img: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         position: "Client",
-        quote: "I love the patience that I was provided with during my time working with those individuals.",
+        quote: "This was my first order, and I'm really impressed. The product quality is excellent, and it arrived on time. I'll definitely shop here again!",
     },
     {
         id: 2,
-        name: "brighteto11",
+        name: "Tanzila Akter",
         username: "@brighteto11",
-        body: "I've dealt with developers for years and was admittedly reluctant to deal with someone in the other side of the world, on different time zones, etc. I am so glad that I chose them and can't recommend them high enough. Fantastic.",
+        body: "Great value for the price. The quality exceeded my expectations, and the delivery was faster than I expected. Very satisfied with my purchase.",
         img: "/img/review/client2.png",
-        image: "/img/review/client2.png",
+        image: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         position: "Client",
-        quote: "Toki and his team are very professional and punctual. They go above and beyond on making sure they align with your vision and scope of work. Phase one of the project was exception. I’m looking forward to continuing working on this project with them and get to delivery! I would highly recommend their services.",
+        quote: "Great value for the price. The quality exceeded my expectations, and the delivery was faster than I expected. Very satisfied with my purchase.",
     },
     {
         id: 3,
-        name: "hegoode",
+        name: "Rakibul Islam",
         username: "@hegoode",
-        body: "Each project benefits from his unique blend of creativity and technical skill, resulting in sites that not only look fantastic but also perform flawlessly. His commitment and attention to detail always ensure the final product goes beyond what I imagined.",
+        body: "The product looks exactly like the pictures. The packaging was secure, and the customer support team was very helpful. Highly recommended!",
         img: "/img/review/client3.png",
-        image: "/img/review/client3.png",
+        image: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         position: "Client",
-        quote: " Toki’s team is very responsive. I work in Eastern timezone and found them easy to reach to answer my questions I had, at times that were convenient to my schedule, including weekends. We extended my original timeline to ensure that everything I wanted was done the way I wanted it. They were understanding and cooperative with the changes and shifting timelines.",
+        quote: "The product looks exactly like the pictures. The packaging was secure, and the customer support team was very helpful. Highly recommended!",
     },
     {
         id: 4,
-        name: "maxcam91043",
+        name: "Sadia Rahman",
         username: "@maxcam91043",
-        body: "This is not our first project together, and there’s a reason I came back Mohin and his team deliver. Every milestone is handled with care, creativity, and precision. We’re almost at the finish line, and I already know the outcome will be something to be proud of.",
+        body: "I was a bit hesitant about shopping online, but this store changed my mind. Everything was perfect, from ordering to delivery. I'll definitely recommend it to my friends.",
         img: "/img/review/client4.png",
-        image: "/img/review/client4.png",
+        image: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         position: "Client",
-        quote: " MD Toki and his team were exceptional to work with. They delivered my website project efficiently and even ahead of schedule. Their attention to details and willingness to go above and beyond made the whole process seamless. If you need a website done, look no further. Highly recommended. – Max",
+        quote: "I was a bit hesitant about shopping online, but this store changed my mind. Everything was perfect, from ordering to delivery. I'll definitely recommend it to my friends.",
     },
     {
         id: 5,
-        name: "sabero1",
+        name: "Md. Imran Hossain",
         username: "@sabero1",
-        body: "Very satisfied with how professional and fast Mihads team is! Did a great piece of work in relatively short time.",
+        body: "Excellent service! I received regular order updates, and the product was 100% authentic. I'll definitely be shopping here again.",
         img: "/img/review/client5.png",
-        image: "/img/review/client5.png",
+        image: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         position: "Client",
-        quote: " It is really awesome to work with you guys. I’m really Happy with the 10 pages Website. My next work will go to you. Really really good.",
+        quote: "Excellent service! I received regular order updates, and the product was 100% authentic. I'll definitely be shopping here again.",
     },
 ];
 
@@ -116,20 +116,33 @@ const CustomerReview = () => {
         return "edge";
     };
 
+    const renderStars = (rating = 5) => {
+        return Array.from({ length: 5 }, (_, index) => {
+            const isFilled = index < Math.round(rating);
+            return (
+                <Star
+                    key={index}
+                    size={14}
+                    fill={isFilled ? "currentColor" : "none"}
+                    stroke="currentColor"
+                    className={isFilled ? "text-amber-400" : "text-slate-300"}
+                />
+            );
+        });
+    };
+
     return (
-        <div id="testimonial" className="py-16 px-4 " >
-            <div className="max-w-[165vh] mx-auto">
-                <div className="relative z-10 w-full text-center mb-4">
-                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-200 via-orange-300 to-[#195022cb] text-transparent bg-clip-text dark:text-white mb-2">
-                        What Our Clients Say
-                    </h2>
-                    <p className="text-white dark:text-gray-400 text-lg">
-                        Real feedback from Fiverr clients we’ve helped succeed.
-                    </p>
+        <div id="testimonial" className="py-4 px-4 " >
+            <div className=" mx-auto">
+                <div className="mb-8 flex flex-wrap items-end justify-center gap-4">
+                    <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5E13] text-center">Community love</p>
+                        <h2 className="mt-2 text-3xl font-semibold text-slate-900">Trusted by thoughtful shoppers</h2>
+                    </div>
                 </div>
 
                 <div className="relative">
-                    <div className="relative h-[580px] flex items-center justify-center overflow-hidden perspective-1000">
+                    <div className="relative h-[450px] flex items-center justify-center overflow-hidden perspective-1000">
                         <div className="absolute w-full flex justify-center items-center">
                             {testimonials.map((testimonial, index) => {
                                 const position = getCardPosition(index);
@@ -219,16 +232,12 @@ const CustomerReview = () => {
                                                 {testimonial.name}
                                             </h3>
 
-                                            <p
-                                                className={`mb-4 font-bold transition-all duration-300 ${position === "center"
-                                                    ? "text-base text-gray-600 dark:text-gray-200"
-                                                    : position === "adjacent"
-                                                        ? "text-sm text-gray-600 dark:text-gray-300"
-                                                        : "text-xs text-gray-600 dark:text-gray-300"
-                                                    }`}
-                                            >
-                                                {testimonial.username}
-                                            </p>
+                                            <div className="mb-4 flex flex-col items-center">
+
+                                                <div className="mt-1 flex items-center gap-1">
+                                                    {renderStars(testimonial.rating ?? 5)}
+                                                </div>
+                                            </div>
 
                                             <p
                                                 className={`text-center font-[500] overflow-hidden transition-all duration-300 ${position === "center"
@@ -258,7 +267,7 @@ const CustomerReview = () => {
                     <div className="flex justify-center  gap-4">
                         <button
                             onClick={handlePrev}
-                            className="w-12 h-12 rounded-full text-white flex items-center justify-center bg-[#624a04] hover:bg-[#4d3b06] border border-orange-100 transition-colors duration-300 disabled:opacity-50 cursor-pointer"
+                            className="w-12 h-12 rounded-full text-white flex items-center justify-center bg-[#0F5B64] hover:bg-[#0a4448] border border-sky-100 transition-colors duration-300 disabled:opacity-50 cursor-pointer shadow-sm"
                             aria-label="Previous testimonial"
                             disabled={isAnimating}
                         >
@@ -266,7 +275,7 @@ const CustomerReview = () => {
                         </button>
                         <button
                             onClick={handleNext}
-                            className="w-12 h-12 rounded-full text-white flex items-center justify-center bg-[#624a04] border hover:bg-[#4d3b06] border-orange-100 transition-colors duration-300 disabled:opacity-50 cursor-pointer"
+                            className="w-12 h-12 rounded-full text-white flex items-center justify-center bg-[#0F5B64] hover:bg-[#0a4448] border border-sky-100 transition-colors duration-300 disabled:opacity-50 cursor-pointer shadow-sm"
                             aria-label="Next testimonial"
                             disabled={isAnimating}
                         >
