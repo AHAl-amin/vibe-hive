@@ -13,7 +13,7 @@ const EmailVerification = () => {
         <Lottie
           animationData={emailLottie}
           loop={false}
-          className="absolute inset-0 w-3/4 h-full mx-auto object-cover"></Lottie>
+          className="hidden md:block absolute inset-0 w-3/4 h-full mx-auto object-cover"></Lottie>
 
       </div>
 
@@ -37,14 +37,14 @@ const EmailVerification = () => {
               />
             </div>
 
-            <form className="backdrop-blur-sm bg-white/10 p-10 mb-10 rounded-lg border border-gray-200 shadow-lg">
-              <h2 className="text-3xl font-bold text-[#B28D28] mb-10 text-center">Enter your Email</h2>
+            <form className="backdrop-blur-sm bg-white/10 p-6 sm:p-10 mb-10 rounded-lg border border-[#FF5E13]/20 shadow-lg">
+              <h2 className="text-3xl font-bold text-[#FF5E13] mb-10 text-center">Enter your Email</h2>
               <div className="form-control w-full mb-6">
                 <div className="relative">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="input input-bordered border-[#B28D2866]/40 w-full pl-10 bg-white/20  text-white placeholder-gray-300"
+                    className="input input-bordered border-[#FF5E13]/20 w-full pl-10 bg-white/20  text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF5E13]/30"
                   />
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 </div>
@@ -54,10 +54,10 @@ const EmailVerification = () => {
               <div className='pb-2'>
 
                 <Link to="/otp_verify">
-                  <button className="btn bg-[#B28D28] text-white rounded-full w-full text-base ">Next</button>
+                  <button className="btn bg-[#FF5E13] text-white rounded-full w-full text-base ">Next</button>
                 </Link>
                 <div className='flex mx-auto justify-center'>
-                  <Link to="/login" className='font-semibold mt-4 text-sm  text-[#B28D28]  hover:underline'>Back to Login</Link>
+                  <Link to="/login" className='font-semibold mt-4 text-sm  text-[#FF5E13]  hover:underline'>Back to Login</Link>
                 </div>
               </div>
 

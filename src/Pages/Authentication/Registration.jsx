@@ -3,6 +3,7 @@ import { Mail, Lock, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import registration from '../../assets/registration.json'
+import logo from '../../../public/img/logo.png';
 
 const Registration = () => {
   const [countryCode, setCountryCode] = useState('+1');
@@ -16,94 +17,92 @@ const Registration = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="w-full bg-gray-900 md:w-1/2 h-[30vh] md:h-screen relative">
-      <Lottie
-        animationData={registration} 
-        loop={true} 
-          className="absolute inset-0 w-3/4 h-full mx-auto object-cover"></Lottie>
-        
-       
+    <div className="scroll-auto bg-gray-100 flex flex-col md:flex-row ">
+      <div className="w-full  md:block hidden md:w-1/2 h-64 md:h-screen relative flex items-center justify-center">
+        <div className="absolute">
+          <Lottie
+            animationData={registration}
+            loop={true}
+            className="hidden md:block w-full h-full object-cover" />
+        </div>
+        <div className="relative z-10 hidden md:block w-full h-full" />
       </div>
 
-      <div className="w-full md:w-1/2 min-h-[100vh] md:h-screen relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage: "url('https://i.ibb.co.com/cctYrsKY/Group-1686551056.png')",
-          }}
-        ></div>
+      <div className="w-full md:w-1/2 min-h-[100vh] md:h-screen relative flex items-center justify-center p-6">
+        <div className="absolute top-6 left-6">
+          <Link to="/" className="inline-flex items-center gap-2 text-slate-600 font-bold">
+            <ArrowLeft size={18} />
+            <span className="hidden sm:inline">Back</span>
+          </Link>
+        </div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] md:h-screen p-8">
-          <div className="w-full max-w-xl space-y-8">
-            <div className="text-center">
-              <img
-                src="https://i.ibb.co.com/sp5JLnkF/Whats-App-Image-2025-02-22-at-9-25-22-AM-3.png"
-                alt="Logo"
-                className="mx-auto mb-16 w-3/4"
-              />
+        <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-xl">
+          <div className="text-center w-40 mx-auto">
+            <img
+              src={logo}
+              alt="Logo"
+              className="mx-auto mb-8 w-3/4 rounded-2xl"
+            />
+          </div>
+
+          <form className="w-full space-y-6 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-[#FF5E13]/20 shadow-lg">
+            <h2 className="text-3xl font-bold text-[#FF5E13] mb-4 text-center">Create your account</h2>
+
+            <div className="form-control w-full">
+              <div className="relative">
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className="input input-bordered w-full pl-10 bg-transparent text-slate-600 placeholder-slate-400 border-[#FF5E13]/20 focus:outline-none focus:ring-2 focus:ring-[#FF5E13]/30"
+                />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600" size={18} />
+              </div>
             </div>
 
-            <form className="space-y-6 backdrop-blur-sm bg-white/10 p-10 mb-10 rounded-lg border border-gray-200 shadow-lg">
-              <h2 className="text-3xl font-bold text-[#B28D28] mb-10 text-center">Sign up</h2>
-              <div className="form-control w-full">
-                <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="input input-bordered border-[#B28D2866]/40 w-full pl-10 bg-white/20 text-white placeholder-gray-300"
-                  />
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                </div>
+            <div className="form-control w-full">
+              <div className="relative">
+                <input
+                  type="password"
+                  placeholder="Password (min. 8 characters)"
+                  className="input input-bordered w-full pl-10 bg-transparent placeholder-slate-400 text-slate-600 border-[#FF5E13]/20 focus:outline-none focus:ring-2 focus:ring-[#FF5E13]/30"
+                />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-slate- 600" size={18} />
               </div>
+            </div>
 
-              <div className="form-control w-full">
-                <div className="relative">
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    className="input input-bordered w-full pl-10 bg-white/20 border-[#B28D2866]/40  placeholder-gray-300 text-black"
-                  />
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <div className="form-control w-full">
+              <div className="relative flex items-center">
+                <div className="flex items-center bg-white/6 border border-[#FF5E13]/20 rounded-l-lg h-12 px-3 text-slate-600">
+                  <span className="mr-2">
+                    {countryCodes.find((c) => c.code === countryCode)?.flag}
+                  </span>
+                  <select
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    className="bg-transparent  focus:outline-none text-slate-600 placeholder-slate-400 text-sm"
+                  >
+                    {countryCodes.map((country) => (
+                      <option key={country.code} value={country.code} className="text-black">
+                        {country.code}
+                      </option>
+                    ))}
+                  </select>
                 </div>
+                <input
+                  type="tel"
+                  placeholder="Phone number (optional)"
+                  className="input input-bordered w-full h-12 bg-transparent text-slate-600 placeholder-slate-400 rounded-l-none border-l-0 border-[#FF5E13]/20 focus:outline-none focus:ring-2 focus:ring-[#FF5E13]/30"
+                />
               </div>
+            </div>
 
-              {/* Replaced "Re-Type your password" with phone number input */}
-              <div className="form-control w-full">
-                <div className="relative flex items-center">
-                  <div className="flex items-center bg-white/20 border-[#B28D2866]/40 border rounded-l-lg h-12 px-3">
-                    <span className="mr-1">
-                      {countryCodes.find((c) => c.code === countryCode)?.flag}
-                    </span>
-                    <select
-                      value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                      className="bg-transparent  focus:outline-none"
-                    >
-                      {countryCodes.map((country) => (
-                        <option key={country.code} value={country.code} className="text-black">
-                          {country.code}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <input
-                    type="tel"
-                    placeholder="Enter phone number"
-                    className="input input-bordered w-full h-12 bg-white/20 border-[#B28D2866]/40 text-black placeholder-gray-300 rounded-l-none border-l-0"
-                  />
-                </div>
-              </div>
+            <button className="w-full bg-[#FF5E13] hover:bg-[#e04e0f] transition-colors text-white rounded-full py-3 font-semibold">Create account</button>
 
-
-              <button className="btn bg-[#B28D28] text-white rounded-full w-full text-base">Next</button>
-
-              <p className="text-center text-gray-900">
-                Already have an account?
-                <Link to="/login" className="text-[#8F5E0A] font-semibold ml-1 hover:underline">Login</Link>
-              </p>
-            </form>
-          </div>
+            <p className="text-center text-slate-600">
+              Already have an account?
+              <Link to="/login" className="text-[#FF5E13] font-semibold ml-1 hover:underline">Login</Link>
+            </p>
+          </form>
         </div>
       </div>
     </div>

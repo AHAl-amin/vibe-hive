@@ -8,11 +8,11 @@ const OTP_Verification = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
 
-      <div className="w-full bg-gray-900 md:w-1/2 h-[30vh] md:h-screen relative">
+      <div className="w-full bg_gray-900 md:w-1/2 h-[30vh] md:h-screen relative">
         <Lottie
           animationData={otpLottie}
           loop={false}
-          className="absolute inset-0 w-3/4 h-full mx-auto object-cover">
+          className="hidden md:block absolute inset-0 w-3/4 h-full mx-auto object-cover">
 
         </Lottie>
 
@@ -38,14 +38,14 @@ const OTP_Verification = () => {
               />
             </div>
 
-            <form className="backdrop-blur-sm bg-white/10 p-10 mb-10 rounded-lg border border-gray-200 shadow-lg">
-              <h2 className="text-3xl font-bold text-[#B28D28] mb-10 text-center">Verify your OTP</h2>
+            <form className="backdrop-blur-sm bg-white/10 p-6 sm:p-10 mb-10 rounded-lg border border-[#FF5E13]/20 shadow-lg">
+              <h2 className="text-3xl font-bold text-[#FF5E13] mb-10 text-center">Verify your OTP</h2>
               <div className="form-control w-full mb-6">
                 <div className="relative">
                   <input
                     type="email"
                     placeholder="Enter your OTP"
-                    className="input input-bordered border-[#B28D2866]/40 w-full pl-10 bg-white/20  text-black placeholder-gray-300"
+                    className="input input-bordered border-[#FF5E13]/20 w-full pl-10 bg-white/20  text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF5E13]/30"
                   />
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 </div>
@@ -55,10 +55,10 @@ const OTP_Verification = () => {
               <div className='pb-2'>
 
                 <Link to="/reset_password">
-                  <button className="btn bg-[#B28D28] text-white rounded-full w-full text-base ">Next</button>
+                  <button className="btn bg-[#FF5E13] text-white rounded-full w-full text-base ">Next</button>
                 </Link>
                 <div className='flex mx-auto justify-center'>
-                  <Link to="/login" className='font-semibold mt-4 text-sm  text-[#B28D28]  hover:underline'>Resend Code</Link>
+                  <Link to="/login" className='font-semibold mt-4 text-sm  text-[#FF5E13]  hover:underline'>Resend Code</Link>
                 </div>
               </div>
 
