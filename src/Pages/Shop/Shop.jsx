@@ -17,6 +17,8 @@ const Shop = () => {
                     ]}
                 />
 
+
+
                 <div className="mt-8 grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
                     <aside className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
                         <div className="flex items-center justify-between">

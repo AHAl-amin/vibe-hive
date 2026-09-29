@@ -1,20 +1,15 @@
-import { ArrowRight, Heart, ShoppingBag, Star, Truck } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Star, Truck } from 'lucide-react';
 import Banner from './Banner';
 import CustomerReview from '../../components/CustomerReview';
-import { Fade, Zoom } from 'react-awesome-reveal';
+import ProductCard from '../../components/ProductCard';
+import { Zoom } from 'react-awesome-reveal';
+import { products } from '../../data/mockData';
 
 const categories = [
   { name: 'Lifestyle', caption: 'Daily favorites', accent: 'from-[#0F5B64] to-[#0b3b3f]' },
   { name: 'Tech', caption: 'Clean and smart', accent: 'from-[#FF5E13] to-[#ff8a4d]' },
   { name: 'Home Decor', caption: 'Warm textures', accent: 'from-[#1f2937] to-[#374151]' },
   { name: 'Wellness', caption: 'Calm essentials', accent: 'from-[#0f766e] to-[#14b8a6]' },
-];
-
-const featuredProducts = [
-  { name: 'Luma Lamp', price: '$74', badge: 'Bestseller' },
-  { name: 'Orbit Bottle', price: '$34', badge: 'New' },
-  { name: 'Tide Tote', price: '$58', badge: 'Trending' },
-  { name: 'Nova Headset', price: '$129', badge: 'Hot Deal' },
 ];
 
 const testimonials = [
@@ -66,33 +61,8 @@ const Home = () => {
           <a href="#" className="text-sm font-semibold text-[#0F5B64]">View all products</a>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {featuredProducts.map((product) => (
-            <div key={product.name} className="group rounded-[1.5rem] border border-slate-200 hover:border-[#FF5E13]/50  delay-100 hover:border-b-4 hover:bg-opacity-50 hover:bg-black/10  bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-start justify-between">
-                <span className="rounded-full bg-[#FF5E13]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5E13]">{product.badge}</span>
-                <button className="rounded-full border border-slate-200 p-2 text-slate-500 transition hover:border-[#0F5B64] hover:text-[#0F5B64]">
-                  <Heart size={16} />
-                </button>
-              </div>
-              <div className="mt-5 flex h-36 items-center justify-center rounded-[1.25rem] bg-gradient-to-br from-[#eef8f8] to-[#fdf1e8] text-4xl font-semibold text-[#0F5B64]">
-                {product.name.charAt(0)}
-              </div>
-              <div className="mt-5">
-                <h3 className="text-lg font-semibold text-slate-900">{product.name}</h3>
-                <div className="mt-2 flex items-center gap-1 text-sm text-amber-500">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <Star key={index} size={14} fill="currentColor" />
-                  ))}
-                </div>
-                <div className="mt-4 flex items-center justify-between">
-                  <p className="text-xl font-semibold text-slate-900">{product.price}</p>
-                  <button className="inline-flex items-center gap-2 rounded-full bg-[#0F5B64] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#0a4448]">
-                    <ShoppingBag size={16} />
-                    Add
-                  </button>
-                </div>
-              </div>
-            </div>
+          {products.slice(0, 4).map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>

@@ -50,8 +50,8 @@ function Footer() {
           <div>
             <h3 className="text-base font-semibold text-slate-900">Stay in touch</h3>
             <ul className="mt-4 space-y-3 text-sm text-slate-600">
-              <li className="flex items-center gap-2"><Phone size={16} className="text-[#FF5E13]" /> +880 1700 000 000</li>
-              <li className="flex items-center gap-2"><Mail size={16} className="text-[#FF5E13]" /> hello@vibehive.com</li>
+              <li className="flex items-center gap-2"><Phone size={16} className="text-[#FF5E13]" /> +8801521447552</li>
+              <li className="flex items-center gap-2"><Mail size={16} className="text-[#FF5E13]" /> Vibehivebangladesh@gmail.com</li>
               <li className="flex items-center gap-2"><Send size={16} className="text-[#FF5E13]" /> Live chat available</li>
             </ul>
           </div>

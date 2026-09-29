@@ -74,14 +74,14 @@ const About = () => {
                                 <div>
                                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Phone</p>
                                     <a href="tel:+8801700000000" className="mt-2 block text-base font-medium text-slate-900 hover:text-[#FF5E13] transition">
-                                        +880 1700 000 000
+                                        +8801521447552
                                     </a>
                                 </div>
 
                                 <div>
                                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Email</p>
-                                    <a href="mailto:hello@vibehive.com" className="mt-2 block text-base font-medium text-slate-900 hover:text-[#FF5E13] transition">
-                                        hello@vibehive.com
+                                    <a href="mailto:Vibehivebangladesh@gmail.com" className="mt-2 block text-base font-medium text-slate-900 hover:text-[#FF5E13] transition">
+                                        Vibehivebangladesh@gmail.com
                                     </a>
                                 </div>
 

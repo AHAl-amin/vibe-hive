@@ -1,11 +1,23 @@
 import { ArrowLeft, Heart, ShoppingBag, Star, Truck } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import { products } from '../../data/mockData';
 
 const ProductDetails = () => {
-    const product = products[0];
+    const { id } = useParams();
+    const product = products.find((item) => item.id === Number(id));
     const navigate = useNavigate();
+
+    if (!product) {
+        return (
+            <div className="bg-[#f7f7f5] px-6 py-20 text-center text-slate-800">
+                <h1 className="text-3xl font-semibold text-slate-900">Product not found</h1>
+                <Link to="/shop" className="mt-6 inline-flex rounded-full bg-[#0F5B64] px-5 py-3 text-sm font-semibold text-white">
+                    Back to shop
+                </Link>
+            </div>
+        );
+    }
 
     return (
         <div className="bg-[#f7f7f5] pb-20 text-slate-800">
@@ -15,7 +27,7 @@ const ProductDetails = () => {
                     title={product.name}
                     subtitle={product.description}
                     actions={[
-                        <Link key="back" to="/shop" className="rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700">Back to shop</Link>,
+                        <div onClick={() => navigate(-1)} className="rounded-full border cursor-pointer border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700">Back</div>,
                     ]}
                 />
 

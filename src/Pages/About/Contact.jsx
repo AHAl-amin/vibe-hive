@@ -40,7 +40,7 @@ const Contact = () => {
                     phone: formData.phone,
                     subject: formData.subject,
                     message: formData.message,
-                    to_email: 'hello@vibehive.com', // Owner's email
+                    to_email: 'Vibehivebangladesh@gmail.com', // Owner's email
                 },
                 'YOUR_PUBLIC_KEY'       // e.g. user_xxxxxxxxxxxx
             );
@@ -53,7 +53,7 @@ const Contact = () => {
         } catch (error) {
             setStatus({
                 type: 'error',
-                message: 'Something went wrong. Please try again or email us directly at hello@vibehive.com',
+                message: 'Something went wrong. Please try again or email us directly at Vibehivebangladesh@gmail.com',
             });
         } finally {
             setLoading(false);
@@ -214,17 +214,17 @@ const Contact = () => {
                                 href="tel:+8801700000000"
                                 className="mt-2 block font-medium text-slate-900 hover:text-[#FF5E13] transition"
                             >
-                                +880 1700 000 000
+                                +8801521447552
                             </a>
                         </div>
 
                         <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
                             <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">Email</p>
                             <a
-                                href="mailto:hello@vibehive.com"
+                                href="mailto:Vibehivebangladesh@gmail.com"
                                 className="mt-2 block font-medium text-slate-900 hover:text-[#FF5E13] transition"
                             >
-                                hello@vibehive.com
+                                Vibehivebangladesh@gmail.com
                             </a>
                         </div>
 
